@@ -28,8 +28,7 @@ int main() {
 	const double y = 0.9;
 	const double z = 0.3;
 
-	double a = get_a(x, y, z);
-	double b = get_b(x, y, z);
+	double a = get_a(x, y, z),b = get_b(x, y, z);
 
 	printf("a = %f\nb = %f", a, b);
 
