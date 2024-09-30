@@ -1,10 +1,22 @@
 ﻿#include <stdio.h>
-#include <stdlib.h>
 
+/*
+* @brief Считывает вещественное число.
+* @return Вещественное число.
+*/ 
 double Input(void);
 
+/*
+* @brief Рассчитывет количестуво дюймов.
+* @param cantimetre Количество сантиметров.
+* @return Количество дюймов
+*/
 double GetInch(const double cantimetre);
 
+/*
+* @brief Точка входа в программу.
+* @retyrn \c 0 в случае выполнения без ошибок.
+*/
 int main()
 {
 	puts("Введите количество сантиметров");
