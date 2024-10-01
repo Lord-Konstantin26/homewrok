@@ -11,7 +11,7 @@ double Input(void);
 * @param cantimetre Количество сантиметров.
 * @return Количество дюймов
 */
-double GetInch(const double cantimetre);
+double GetInch(const double centimetre);
 
 /*
 * @brief Точка входа в программу.
@@ -20,8 +20,8 @@ double GetInch(const double cantimetre);
 int main()
 {
 	puts("Введите количество сантиметров");
-	double cantimetre = Input();
-	printf_s("Количество дюймов %lf", GetInch(cantimetre));
+	double centimetre = Input();
+	printf_s("Количество дюймов %lf", GetInch(centimetre));
 
 	return 0;
 }
@@ -33,7 +33,8 @@ double Input(void)
 	return value;
 }
 
-double GetInch(const double cantimetre)
+double GetInch(const double centimetre)
 {
-	return cantimetre / 2.5;
+	const double toInch = 2.5;
+	return centimetre / toInch;
 }
