@@ -15,7 +15,7 @@ double GetInch(const double centimetre);
 
 /*
 * @brief Точка входа в программу.
-* @retyrn \c 0 в случае выполнения без ошибок.
+* @return \c 0 в случае выполнения без ошибок.
 */
 int main()
 {
