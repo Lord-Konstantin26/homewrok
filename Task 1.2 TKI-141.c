@@ -17,10 +17,10 @@ double GetInch(const double cantimetre);
 * @brief Точка входа в программу.
 * @return \c 0 в случае выполнения без ошибок.
 */
-int main()
+int main(void)
 {
 	puts("Введите количество сантиметров");
-	double cantimetre = Input();
+	double centimetre = Input();
 	printf_s("Количество дюймов %lf", GetInch(cantimetre));
 
 	return 0;
