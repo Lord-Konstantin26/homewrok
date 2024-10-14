@@ -17,7 +17,7 @@ double Input(void);
 * @param x Введенное значение.
 * @return Возвращает значение функции.
 */
-double Get_Function(const double a, const double x);
+double GetFunction(const double a, const double x);
 
 /*
 * @brief Точка входа в программу.
@@ -48,7 +48,7 @@ double Input(void)
 	return value;
 }
 
-double Get_Function(const double a, const double x)
+double GetFunction(const double a, const double x)
 {
 	if (x < 0.5)
 	{
