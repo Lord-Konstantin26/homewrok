@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <float.h>
 
 /*
 * @brief Проверка введеных чисел.
@@ -16,7 +17,7 @@ double Input(void);
 * @param x Введенное значение.
 * @return Возвращает значение функции.
 */
-double Get_function(const double a, const double x);
+double Get_Function(const double a, const double x);
 
 /*
 * @brief Точка входа в программу.
@@ -47,13 +48,13 @@ double Input(void)
 	return value;
 }
 
-double Get_function(const double a, const double x)
+double Get_Function(const double a, const double x)
 {
 	if (x < 0.5)
 	{
 		return sqrt(a * (x * x) + 1);
 	}
-	else if (x == 0.5)
+	else if (x == 0.5 = DBL_EPSILON)
 	{
 		return a * x + 3;
 	}
