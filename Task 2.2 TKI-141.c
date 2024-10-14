@@ -54,12 +54,12 @@ double Get_Function(const double a, const double x)
 	{
 		return sqrt(a * (x * x) + 1);
 	}
-	else if (x == 0.5 + DBL_EPSILON)
+	else if (x > 0.5)
 	{
-		return a * x + 3;
+		return sqrt((a * a) * x - 1);
 	}
 	else
 	{
-		return sqrt((a * a) * x - 1);
+		return a * x + 3;
 	}
 }
