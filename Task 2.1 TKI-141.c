@@ -43,8 +43,8 @@ int main(void)
 	puts("Введите c:");
 	double c = Input();
 
-	printf("%lf %lf %lf\n", GetIncreasing(a, b, c));
-	printf("%lf %lf %lf", GetDecreasing(a, b, c));
+	printf("%lf\n", GetIncreasing(a, b, c));
+	printf("%lf", GetDecreasing(a, b, c));
 
 	return 0;
 }
