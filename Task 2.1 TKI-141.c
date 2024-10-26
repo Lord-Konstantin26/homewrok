@@ -104,8 +104,8 @@ double GetMin(const double a, const double b)
 double GetIncreasing(const double a, const double b, const double c)
 {
     double max = GetMax(GetMax(a, b), c);
-    double middle = GetMin(GetMin(GetMax(a, b), GetMax(b, c)), GetMin(GetMax(a, c), GetMax(b, c)));
     double min = GetMin(GetMin(a, b), c);
+    double middle = a + b + c - max - min;
 
     printf("%lf %lf %lf", min, middle, max);
 }
@@ -113,8 +113,8 @@ double GetIncreasing(const double a, const double b, const double c)
 double GetDecreasing(const double a, const double b, const double c)
 {
     double max = GetMax(GetMax(a, b), c);
-    double middle = GetMin(GetMin(GetMax(a, b), GetMax(b, c)), GetMin(GetMax(a, c), GetMax(b, c)));
     double min = GetMin(GetMin(a, b), c);
+    double middle = a + b + c - max - min;
 
     printf("%lf %lf %lf", max, middle, min);
 }
