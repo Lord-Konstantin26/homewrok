@@ -31,7 +31,7 @@ double GetMin(const double a, const double b);
 * @param x Число x.
 * @return Выводит заданные функции в порядке возрастания.
 */
-double GetFunctionsInAscendingOrder(const double x);
+void GetFunctionsInAscendingOrder(const double x);
 
 /*
 * @brief Точка входа в программу.
@@ -107,7 +107,5 @@ double GetFunctionsInAscendingOrder(const double x)
             printf("ln_x не имеет смысла\n");
             printf("%lf %lf", cos(x), sin(x));
         }
-        return 0;
     }
-    return 0;
 }
