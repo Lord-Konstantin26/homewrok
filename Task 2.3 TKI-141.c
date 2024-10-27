@@ -85,7 +85,7 @@ double GetMin(const double a, const double b)
     }
 }
 
-double GetFunctionsInAscendingOrder(const double x)
+void GetFunctionsInAscendingOrder(const double x)
 {
     if (x > 0)
     {
