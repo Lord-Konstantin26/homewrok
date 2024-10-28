@@ -67,10 +67,8 @@ double GetMax(const double a, const double b)
     {
         return a;
     }
-    else
-    {
-        return b;
-    }
+
+    return b;
 }
 
 double GetMin(const double a, const double b)
@@ -79,10 +77,8 @@ double GetMin(const double a, const double b)
     {
         return a;
     }
-    else
-    {
-        return b;
-    }
+    
+    return b;
 }
 
 void GetFunctionsInAscendingOrder(const double x)
