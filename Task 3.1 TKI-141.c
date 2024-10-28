@@ -17,7 +17,7 @@ double GetFunctionValue(const double x);
 * @param x Значение x, которое требуется проверить.
 * @return true, если функцию можно вычислить для данного значения x, false в противном случае.
 */
-bool GetCheckX(double  x);
+bool GetCheckX(const double  x);
 
 /*
 * @brief Функция проверки ввода.
@@ -59,7 +59,7 @@ int main(void)
 
     while (x <= finish_x + DBL_EPSILON)
     {
-        if (!GetCheckX(start_x))
+        if (GetCheckX(start_x))
         {
             printf("X не существет в функции %2lf\n", x);
         }
@@ -73,9 +73,9 @@ int main(void)
     return 0;
 }
 
-bool GetCheckX(double  x)
+bool GetCheckX(const double  x)
 {
-    return x > 0;
+    return x > 0 + DBL+EPSILON;
 }
 
 void CheckInterval(const double start_x, const double finish_x)
