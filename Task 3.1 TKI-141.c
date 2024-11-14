@@ -61,11 +61,11 @@ int main(void)
     {
         if (GetCheckX(start_x))
         {
-            printf("X не существет в функции %2lf\n", x);
+            printf("x = %lf y = % lf\n", x, GetFunctionValue(x));
         }
         else
         {
-            printf("x = %lf y = % lf\n", x, GetFunctionValue(x));
+           printf("X не существет в функции %2lf\n", x);
         }
 
         x += step_x;
