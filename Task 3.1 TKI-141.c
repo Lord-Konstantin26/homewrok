@@ -75,7 +75,7 @@ int main(void)
 
 bool GetCheckX(const double  x)
 {
-    return x > 0;
+    return x > -DBL_EPSILON;
 }
 
 void CheckInterval(const double start_x, const double finish_x)
