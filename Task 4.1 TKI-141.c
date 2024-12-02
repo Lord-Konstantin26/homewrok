@@ -23,6 +23,12 @@ int Input(void);
 */
 int InputArray(void);
 
+/*
+* @brief Функция, которая освоюождает память из под массива.
+* @param arr Указатель на массив.
+*/
+void DeletedArray(int* arr);
+
 /**
 * @brief Функция проверки массива.
 * @param arr - массив, который мы проверяем на NULL.
@@ -116,16 +122,16 @@ int main(void)
     int* arr2 = IntArray(size);
     PrintArray(SecondArrayTask3(arr, arr2, size), size);
 
-    free(arr);
-    free(arr2);
+    DeletedArray(arr);
+    DeletedArray(arr2);
 
     return 0;
 }
 
 int Input(void)
 {
-    int input;
-    if (scanf_s("%d", &input) != 1)
+    int input = 0;
+    if (scanf("%d", &input) != 1)
     {
         puts("Ошибка ввода\a");
         exit(EXIT_FAILURE);
@@ -164,6 +170,7 @@ int* IntArray(const size_t size)
 
 void FullRandomArray(int* arr, const size_t size)
 {
+    CheckArray(arr);
     puts("Введите минимальную границу случайных чисел: ");
     const int DownBound = Input();
     puts("Введите максимальную границу случайных чисел: ");
@@ -183,6 +190,7 @@ void FullRandomArray(int* arr, const size_t size)
 
 void FillingArrayKeyboard(int* arr, const size_t size)
 {
+    CheckArray(arr);
     printf("\nВведите %zu целых чисел для заполнения массива: ", size);
     for (size_t i = 0; i < size; i++)
     {
@@ -192,6 +200,7 @@ void FillingArrayKeyboard(int* arr, const size_t size)
 
 void FillingArray(int* arr, const size_t size)
 {
+    CheckArray(arr);
     printf("\nКаким способом вы хотите заполнить массив?\n"
         "Случайные числа - %d\n"
         "Ввод с клавиатуры - %d\n", RANDOM, KEYBOARD);
@@ -214,6 +223,7 @@ void FillingArray(int* arr, const size_t size)
 
 void PrintArray(const int* arr, const size_t size)
 {
+    CheckArray(arr);
     for (size_t i = 0; i < size; i++)
     {
         printf("%d ", arr[i]);
@@ -223,6 +233,7 @@ void PrintArray(const int* arr, const size_t size)
 
 int MultiEvenElements(const int* arr, const size_t size)
 {
+    CheckArray(arr);
     int com = 1;
     for (size_t i = 0; i < size; i++)
     {
@@ -242,6 +253,7 @@ int MultiEvenElements(const int* arr, const size_t size)
 
 int CountOddElements(const int* arr, const size_t size)
 {
+    CheckArray(arr);
     puts("Ввидите любое целое число: ");
     int number = Input();
     int count = 0;
@@ -250,10 +262,6 @@ int CountOddElements(const int* arr, const size_t size)
         if (arr[i] % 2 != 0 && abs(arr[i]) > number)
         {
             count++;
-        }
-        else
-        {
-            return 0;
         }
     }
     return count;
@@ -273,4 +281,10 @@ int* SecondArrayTask3(const int* arr, int* arr2, const size_t size)
         }
     }
     return arr2;
+}
+
+void DeletedArray(int* arr)
+{
+    CheckArray(arr);
+    free(arr);
 }
