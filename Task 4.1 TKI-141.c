@@ -108,7 +108,7 @@ int main(void)
     puts("Введите количество элементов в массиве: ");
     size_t size = InputArray();
 
-    int* arr = IntArray(size);
+    int* arr = (size_t)IntArray(size);
     FillingArray(arr, size);
 
     printf("\nИсходный массив: ");
