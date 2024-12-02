@@ -116,6 +116,9 @@ int main(void)
     int* arr2 = IntArray(size);
     PrintArray(SecondArrayTask3(arr, arr2, size), size);
 
+    free(arr);
+    free(arr2);
+
     return 0;
 }
 
@@ -133,14 +136,14 @@ int Input(void)
 
 int InputArray(void)
 {
-    int input;
-    if (scanf_s("%d", &input) != 1 || input <= 0)
+    int value = Input();
+    if (value <= 0)
     {
         puts("Размер массива должен быть больше нуля.\a");
         exit(EXIT_FAILURE);
     }
 
-    return input;
+    return value;
 }
 
 void CheckArray(int* const arr)
