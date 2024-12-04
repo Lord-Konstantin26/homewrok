@@ -269,6 +269,8 @@ int CountOddElements(const int* arr, const size_t size)
 
 int* SecondArrayTask3(const int* arr, int* arr2, const size_t size)
 {
+    CheckArray(arr);
+    CheckArray(arr2);
     for (size_t i = 0; i < size; i++)
     {
         if (arr[i] % 2 != 0 && arr[i] % 3 == 0)
