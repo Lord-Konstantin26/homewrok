@@ -91,7 +91,7 @@ double SummaE(const int e)
 	double current = 1;
 	double sum = 0;
 
-	for (int i = 1; fabs(current) >= e + DBL_EPSILON; ++i)
+	for (int i = 1; fabs(current) >= e - DBL_EPSILON; ++i)
 	{
 		current *= Recurrent(i);
 		sum += current;
@@ -101,9 +101,9 @@ double SummaE(const int e)
 
 }
 
-double Input(void)
+int Input(void)
 {
-	double input = 0.0;
+	int input = 0;
 
 	if (scanf_s("%lf", &input) != 1)
 	{
@@ -115,7 +115,7 @@ double Input(void)
 
 }
 
-double CheckZero(void)
+int CheckZero(void)
 {
 	int input = Input();
 
