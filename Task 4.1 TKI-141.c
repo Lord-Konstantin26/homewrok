@@ -65,12 +65,20 @@ void FullRandomArray(int* arr, const size_t size);
 void PrintArray(const int* arr, const size_t size);
 
 /**
+* @brief Считает колиичество четных элементов, значения модуля которых меньше пяти.
+* @param arr Указатель на массив.
+* @param size Размер массива.
+* @return Количество четных элементов, значения модуля которых меньше пяти.
+*/
+int CalculateProduct(const int* arr, const size_t size);
+
+/**
 * @brief Выполняет задание 1: перемножает четные элементы, значение модуля которых меньше пяти.
 * @param arr Указатель на массив.
 * @param size Размер массива.
 * @return Произведение четных элементов, значение модуля которых меньше пяти, если таких элементов нет возвращает ноль.
 */
-int MultiEvenElements(const int* arr, const size_t size);
+int ForTask1(const int* arr, const size_t size);
 
 /**
 * @brief Выполняет задание 2: находит количество нечетных элементов, значение модуля которых больше заданного числа.
@@ -106,7 +114,7 @@ int main(void)
     srand(time(NULL));
     setlocale(LC_ALL, "Russian");
     puts("Введите количество элементов в массиве: ");
-    size_t size = InputArray();
+    size_t size = (size_t)InputArray();
 
     int* arr = IntArray(size);
     FillingArray(arr, size);
@@ -231,24 +239,39 @@ void PrintArray(const int* arr, const size_t size)
     printf("\n");
 }
 
-int MultiEvenElements(const int* arr, const size_t size)
+int CalculateProduct(const int* arr, const size_t size)
 {
-    CheckArray(arr);
-    int com = 1;
+    int count = 0; 
+
     for (size_t i = 0; i < size; i++)
     {
-        if (arr[i] % 2 == 0 && abs(arr[i]) < 5)
+        if ((i % 2 == 0) && (abs(arr[i]) < 5))
         {
-            com *= arr[i];
-        }
-        else
-        {
-            return 0;
+            count++;
         }
     }
+    return count;
+}
 
-    return com;
-
+int ForTask1(const int* arr, const size_t size)
+{
+    int mylti = 1;
+    int count1 = CalculateProduct(arr, size);
+    if (count1 > 0)
+    {
+        for (size_t i = 0; i < size; i++)
+        {
+            if ((i % 2 == 0) && (abs(arr[i]) < 5))
+            {
+                mylti *= arr[i];
+            }
+        }
+        return mylti;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 int CountOddElements(const int* arr, const size_t size)
