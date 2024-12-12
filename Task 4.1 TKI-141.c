@@ -241,6 +241,7 @@ void PrintArray(const int* arr, const size_t size)
 
 int CalculateProduct(const int* arr, const size_t size)
 {
+    CheckArray(arr);
     int count = 0; 
 
     for (size_t i = 0; i < size; i++)
@@ -255,6 +256,7 @@ int CalculateProduct(const int* arr, const size_t size)
 
 int ForTask1(const int* arr, const size_t size)
 {
+    CheckArray(arr);
     int mylti = 1;
     int count1 = CalculateProduct(arr, size);
     if (count1 > 0)
