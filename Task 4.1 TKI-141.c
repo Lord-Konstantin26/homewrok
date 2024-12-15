@@ -246,7 +246,7 @@ int CalculateProduct(const int* arr, const size_t size)
 
     for (size_t i = 0; i < size; i++)
     {
-        if ((i % 2 == 0) && (abs(arr[i]) < 5))
+        if ((arr[i] % 2 == 0) && (abs(arr[i]) < 5))
         {
             count++;
         }
@@ -263,7 +263,7 @@ int ForTask1(const int* arr, const size_t size)
     {
         for (size_t i = 0; i < size; i++)
         {
-            if ((i % 2 == 0) && (abs(arr[i]) < 5))
+            if ((arr[i] % 2 == 0) && (abs(arr[i]) < 5))
             {
                 mylti *= arr[i];
             }
