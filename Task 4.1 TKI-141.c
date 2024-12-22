@@ -23,12 +23,6 @@ int Input(void);
 */
 int InputArray(void);
 
-/*
-* @brief Функция, которая освоюождает память из под массива.
-* @param arr Указатель на массив.
-*/
-void DeletedArray(int* arr);
-
 /**
 * @brief Функция проверки массива.
 * @param arr - массив, который мы проверяем на NULL.
@@ -130,8 +124,8 @@ int main(void)
     int* arr2 = IntArray(size);
     PrintArray(SecondArrayTask3(arr, arr2, size), size);
 
-    DeletedArray(arr);
-    DeletedArray(arr2);
+    free(arr);
+    free(arr2);
 
     return 0;
 }
@@ -308,10 +302,4 @@ int* SecondArrayTask3(const int* arr, int* arr2, const size_t size)
         }
     }
     return arr2;
-}
-
-void DeletedArray(int* arr)
-{
-    CheckArray(arr);
-    free(arr);
 }
