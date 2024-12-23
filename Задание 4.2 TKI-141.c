@@ -65,7 +65,7 @@ void PrintArray(const int* arr, const size_t size);
  * @param size Размер массива.
  * @return Индекс первого отрицательного элемента или -1, если такого нет.
  */
-int LastNegativElement(const int* arr, const size_t size);
+size_t LastNegativElement(const int* arr, const size_t size);
 
 /**
  * @brief Заменяет последний отрицательный элемент массива на модуль первого элемента массива.
@@ -201,15 +201,15 @@ int* IntArray(const size_t size)
     return arr;
 }
 
-void FullRandomArray(int* arr, const size_t size)
+void FullRandomArray(int* const arr, const size_t size)
 {
     CheckArray(arr);
     puts("Введите минимальную границу случайных чисел: ");
-    const int DownBound = Input();
+    const int downBound = Input();
     puts("Введите максимальную границу случайных чисел: ");
-    const int UpBound = Input();
+    const int upBound = Input();
 
-    if (DownBound > UpBound)
+    if (downBound > upBound)
     {
         puts("Неправильно введена граница чисел!\a");
         exit(EXIT_FAILURE);
@@ -217,7 +217,7 @@ void FullRandomArray(int* arr, const size_t size)
 
     for (size_t i = 0; i < size; i++)
     {
-        arr[i] = rand() % (UpBound - DownBound + 1) + DownBound;
+        arr[i] = rand() % (upBound - downBound + 1) + downBound;
     }
 }
 
@@ -250,6 +250,7 @@ void FillingArray(int* arr, const size_t size)
         break;
     default:
         printf("Неправильный номер задания!\a");
+        free(arr);
         exit(EXIT_FAILURE);
     }
 }
@@ -264,18 +265,17 @@ void PrintArray(const int* arr, const size_t size)
     printf("\n");
 }
 
-int LastNegativElement(const int* arr, const size_t size)
+size_t LastNegativElement(const int* arr, const size_t size)
 {
     CheckArray(arr);
-    int lastneg = -1;
-    for (size_t i = 0; i < size; i++)
+    for (size_t i = size - 1; i-->0)
     {
         if (arr[i] < 0)
         {
-            lastneg = i;
+            return = i;
         }
     }
-    return lastneg;
+    return size;
 }
 
 void ReplaceTask1(const int* arr, int* arr2, const size_t size)
@@ -287,7 +287,7 @@ void ReplaceTask1(const int* arr, int* arr2, const size_t size)
     {
         arr2[i] = arr[i];
     }
-    if (result != -1)
+    if (result < size)
     {
         arr2[LastNegativElement(arr, size)] = abs(arr[0]);
     }
