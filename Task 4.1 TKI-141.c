@@ -23,11 +23,6 @@ int Input(void);
 */
 int InputArray(void);
 
-/*
-* @brief Функция, которая освоюождает память из под массива.
-* @param arr Указатель на массив.
-*/
-void DeletedArray(int* arr);
 
 /**
 * @brief Функция проверки массива.
