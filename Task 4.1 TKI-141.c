@@ -175,11 +175,11 @@ void FullRandomArray(int* arr, const size_t size)
 {
     CheckArray(arr);
     puts("Введите минимальную границу случайных чисел: ");
-    const int DownBound = Input();
+    const int downbound = Input();
     puts("Введите максимальную границу случайных чисел: ");
-    const int UpBound = Input();
+    const int upbound = Input();
 
-    if (DownBound > UpBound)
+    if (downbound > upbound)
     {
         puts("Неправильно введена граница чисел!\a");
         exit(EXIT_FAILURE);
@@ -187,7 +187,7 @@ void FullRandomArray(int* arr, const size_t size)
 
     for (size_t i = 0; i < size; i++)
     {
-        arr[i] = rand() % (UpBound - DownBound + 1) + DownBound;
+        arr[i] = rand() % (upbound - downbound + 1) + downbound;
     }
 }
 
