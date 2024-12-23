@@ -205,11 +205,11 @@ void FullRandomArray(int* const arr, const size_t size)
 {
     CheckArray(arr);
     puts("Введите минимальную границу случайных чисел: ");
-    const int downBound = Input();
+    const int downbound = Input();
     puts("Введите максимальную границу случайных чисел: ");
-    const int upBound = Input();
+    const int upbound = Input();
 
-    if (downBound > upBound)
+    if (downbound > upbound)
     {
         puts("Неправильно введена граница чисел!\a");
         exit(EXIT_FAILURE);
@@ -217,7 +217,7 @@ void FullRandomArray(int* const arr, const size_t size)
 
     for (size_t i = 0; i < size; i++)
     {
-        arr[i] = rand() % (upBound - downBound + 1) + downBound;
+        arr[i] = rand() % (upbound - downbound + 1) + downbound;
     }
 }
 
@@ -268,7 +268,7 @@ void PrintArray(const int* arr, const size_t size)
 size_t LastNegativElement(const int* arr, const size_t size)
 {
     CheckArray(arr);
-    for (size_t i = size - 1; i-->0)
+    for (size_t i = size - 1; i > 0;; i--)
     {
         if (arr[i] < 0)
         {
@@ -299,7 +299,7 @@ bool CountFigure(int number)
 
     while (abs(number) > 0)
     {
-        int last = number % 10;
+        int last = abs(number) % 10;
         count[last]++;
 
         if (count[last] > 1)
