@@ -268,7 +268,7 @@ void PrintArray(const int* arr, const size_t size)
 size_t LastNegativElement(const int* arr, const size_t size)
 {
     CheckArray(arr);
-    for (size_t i = size - 1; i > 0;; i--)
+    for (size_t i = size - 1; i > 0; i--)
     {
         if (arr[i] < 0)
         {
